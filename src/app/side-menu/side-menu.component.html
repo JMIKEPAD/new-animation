@@ -1,0 +1,62 @@
+<header> 
+    <div *ngIf="visibility === 'invisible'">
+        <mat-icon (click)="visibilityState()" >reorder</mat-icon>
+    </div>
+    <div *ngIf="visibility === 'visible'">
+        <mat-icon  (click)="visibilityState()">clear</mat-icon>
+    </div>
+</header>
+
+
+<div class="sidemenu" [@visibleInvisible]="visibility"
+(@visibleInvisible.start)="$event.element.style.display = 'block'"
+(@visibleInvisible.done)="$event.element.style.display = ($event.toState === 'visible' ? 'block' : 'none')">
+    <div class="filter-container" >
+        <div class="filter" (click)="opendetails()">
+            <div *ngIf="isOpen === 'closed'" >
+                <h1>FILTER 
+                    <mat-icon>keyboard_arrow_down</mat-icon> 
+                </h1>
+            </div>
+            <div *ngIf="isOpen === 'open'" >
+                <h1>FILTER 
+                    <mat-icon>keyboard_arrow_up</mat-icon>
+                </h1>
+            </div>
+        </div>
+        <div class="details" [@upAndDown]="isOpen" >
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+
+        </div>
+    </div>
+    <div class="statistics-container">
+        <div class="statistics" (click)="opendetails2()">
+            <div *ngIf="isOpen2 === 'closed'" >
+                <h1>STATISTICS 
+                    <mat-icon>keyboard_arrow_down</mat-icon> 
+                </h1>
+            </div>
+            <div *ngIf="isOpen2 === 'open'" >
+                <h1>STATISTICS
+                    <mat-icon>keyboard_arrow_up</mat-icon>
+                </h1>
+            </div>
+        </div>
+        <div class="details" [@upAndDown]="isOpen2">
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam quia ab voluptates alias aliquam, provident architecto, libero vitae quos nostrum incidunt possimus repellendus, quaerat itaque ducimus hic voluptate omnis deserunt.</span>
+        </div>
+    </div>
+</div>
+<!-- <mat-icon>keyboard_arrow_up</mat-icon> -->
